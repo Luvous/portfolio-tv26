@@ -27,7 +27,7 @@ export const projects = [
     category: "APPAREL GRAPHIC DESIGN & PRODUCT DEVELOPMENT",
     images: [
       "/projects/sportswear/image01.webp",
-      "/projects/sportswear/image02.gif",
+      "/projects/sportswear/image02.webp",
       "/projects/sportswear/image03.png",
       "/projects/sportswear/image04.webp",
       "/projects/sportswear/image00.webp",
