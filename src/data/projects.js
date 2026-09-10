@@ -5,14 +5,14 @@ export const projects = [
     title: "BRANDING",
     category: "BRAND DEVELOPMENT & VISUAL IDENTITY",
     images: [
-      "projects/branding/image00.jpg",
-      "projects/branding/image01.png",
-      "projects/branding/image02.jpg",
-      "projects/branding/image03.jpg",
-      "projects/branding/image04.png",
-      "projects/branding/image05.jpg",
-      "projects/branding/image06.png",
-      "projects/branding/image07.png"
+      "/projects/branding/image00.jpg",
+      "/projects/branding/image01.png",
+      "/projects/branding/image02.jpg",
+      "/projects/branding/image03.jpg",
+      "/projects/branding/image04.png",
+      "/projects/branding/image05.jpg",
+      "/projects/branding/image06.png",
+      "/projects/branding/image07.png"
     ],
     link: "https://www.behance.net/moodboard/226681103/01_BRANDING",
     year: "2028",
@@ -26,14 +26,14 @@ export const projects = [
     title: "SPORTSWEAR",
     category: "APPAREL GRAPHIC DESIGN & PRODUCT DEVELOPMENT",
     images: [
-      "projects/sportswear/image01.png",
-      "projects/sportswear/image02.gif",
-      "projects/sportswear/image03.png",
-      "projects/sportswear/image04.png",
-      "projects/sportswear/image00.png",
-      "projects/sportswear/image05.png",
-      "projects/sportswear/image06.png",
-      "projects/sportswear/image07.png"
+      "/projects/sportswear/image01.webp",
+      "/projects/sportswear/image02.gif",
+      "/projects/sportswear/image03.png",
+      "/projects/sportswear/image04.webp",
+      "/projects/sportswear/image00.webp",
+      "/projects/sportswear/image05.webp",
+      "/projects/sportswear/image06.webp",
+      "/projects/sportswear/image07.png"
     ],
     link: "https://www.behance.net/moodboard/226655379/SPORTS",
     year: "2025-PRESENT",
@@ -69,11 +69,11 @@ export const projects = [
     title: "TEXTILE DEVELOPMENT",
     category: "MATERIALS & PRODUCTION PROCESS",
     images: [
-      "projects/textile/image00.png",
-      "projects/textile/image01.png",
-      "projects/textile/image02.png",
-      "projects/textile/image03.png",
-      "projects/textile/image04.png"
+      "/projects/textile/image00.png",
+      "/projects/textile/image01.png",
+      "/projects/textile/image02.png",
+      "/projects/textile/image03.png",
+      "/projects/textile/image04.png"
     ],
     link: "https://www.behance.net/GalapagoStudio",
     year: "2022-PRESENT",
