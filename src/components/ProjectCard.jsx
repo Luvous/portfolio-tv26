@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 export default function ProjectCard({
@@ -12,6 +12,18 @@ export default function ProjectCard({
       window.open(project.link, '_blank', 'noopener,noreferrer');
     }
   };
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    if (!project.images || project.images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % project.images.length);
+    }, 1800);
+
+    return () => clearInterval(interval);
+  }, [project.images]);
 
   return (
     <div
@@ -31,28 +43,26 @@ export default function ProjectCard({
       {/* IMAGE */}
       <div className="absolute inset-0 overflow-hidden">
         <img
-          src={project.image}
+          src={project.images ? project.images[currentImage] : project.image}
           alt={project.title}
           loading="lazy"
-          className="w-full h-full object-cover object-center filter grayscale-[20%] contrast-110 brightness-90 transition-transform duration-700 ease-out group-hover:scale-105 group-hover:brightness-95"
-        />
-
+          className="w-full h-full object-cover object-center filter grayscale-[20%] contrast-110 brightness-90 animate-slow-zoom transition-all duration-700 ease-out group-hover:scale-105 group-hover:brightness-125" />
+        <div className="absolute inset-0 bg-[#B40505]/8 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/40 group-hover:from-black/75 transition-colors duration-300" />
       </div>
 
       {/* TAGLINE FROM PROJECT DATA */}
       {project.tagline && (
         <div
-          className={`absolute z-10 text-[9px] font-mono tracking-[0.25em] text-white/70 uppercase leading-relaxed ${
-            editorialPosition === 'top-right'
-              ? 'top-4 right-4 text-right'
-              : 'bottom-4 left-4'
-          }`}
+          className={`absolute z-10 text-[9px] font-mono tracking-[0.25em] text-white/70 uppercase leading-relaxed ${editorialPosition === 'top-right'
+            ? 'top-4 right-4 text-right'
+            : 'bottom-4 left-4'
+            }`}
         >
           {Array.isArray(project.tagline)
             ? project.tagline.map((line, index) => (
-                <div key={index}>{line}</div>
-              ))
+              <div key={index}>{line}</div>
+            ))
             : (
               <div>{project.tagline}</div>
             )
@@ -66,11 +76,10 @@ export default function ProjectCard({
 
       {/* PROJECT INFORMATION */}
       <div
-        className={`absolute z-10 p-5 md:p-6 flex flex-col ${
-          titlePosition === 'top-left'
-            ? 'top-0 left-0'
-            : 'bottom-0 left-0 right-0'
-        }`}
+        className={`absolute z-10 p-5 md:p-6 flex flex-col ${titlePosition === 'top-left'
+          ? 'top-0 left-0'
+          : 'bottom-0 left-0 right-0'
+          }`}
       >
 
         <span className="font-bebas text-sm md:text-base text-white/50 tracking-wider mb-0.5">

@@ -17,6 +17,24 @@
   letter-spacing: 0.04em;
 }
 
+@keyframes slowZoom {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-slow-zoom {
+  animation: slowZoom 8s ease-in-out infinite;
+}
+
 /* Custom scrollbar for subtle overflow when needed on small screens */
 ::-webkit-scrollbar {
   width: 4px;
