@@ -41,12 +41,12 @@ export default function Contact({ setActiveView }) {
   ];
 
   return (
-    <div id="contact-section" className="w-full h-full min-h-screen md:h-screen overflow-y-auto md:overflow-hidden bg-[#000000] text-white flex flex-col justify-between p-6 sm:p-10 md:p-12 lg:p-16 pt-16 md:pt-12">
+    <div id="contact-section" className="w-full h-full min-h-screen md:h-screen overflow-y-auto md:overflow-hidden bg-[#000000] text-white flex flex-col justify-between p-6 pt-20 md:p-10 lg:p-12">
       
       {/* Top Header info */}
       <div className="flex items-center justify-between border-b border-[#1a1a1a] pb-4 select-none">
         <div className="flex items-center gap-3">
-          <span className="font-bebas text-2xl text-[#B40505]">TV</span>
+          <span className="font-bebas text-2xl text-[#B40505] tracking-wider">TV</span>
           <span className="w-8 h-[1px] bg-[#B40505]"></span>
           <span className="text-[10px] font-mono tracking-[0.3em] text-white/50 uppercase">
             CONTACTO & COLABORACIONES
@@ -63,10 +63,10 @@ export default function Contact({ setActiveView }) {
 
       {/* Main Massive Editorial Display Typography */}
       <div className="my-auto py-8 md:py-4">
-        <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight leading-[0.88] select-none">
-          HAGAMOS<br />
-          <span className="text-[#B40505]">QUE TU IDEA</span><br />
-          HABLE.
+        <h1 className="font-bebas text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight leading-[0.9] select-none">
+          HABLEMOS<br />
+          <span className="text-[#B40505]">DE LO QUE</span><br />
+          VIENE.
         </h1>
         <p className="mt-4 text-xs sm:text-sm font-mono tracking-[0.25em] text-white/50 uppercase max-w-xl">
           DISPONIBLE PARA PROYECTOS DE BRANDING, INDUMENTARIA DEPORTIVA, DIRECCIÓN DE ARTE Y CONSULTORÍA CREATIVA.
@@ -76,9 +76,9 @@ export default function Contact({ setActiveView }) {
       {/* Bottom Contact Links Grid */}
       <div className="border-t border-[#1a1a1a] pt-6 md:pt-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {socialLinks.map((link, idx) => (
+          {socialLinks.map((link) => (
             <div
-              key={idx}
+              key={link.name}
               className="p-4 bg-[#070707] border border-[#1a1a1a] hover:border-[#B40505]/60 transition-colors group flex flex-col justify-between"
             >
               <div>
@@ -110,9 +110,6 @@ export default function Contact({ setActiveView }) {
                 </a>
               </div>
 
-              <div className="mt-3 pt-2 border-t border-[#141414] text-[9px] font-mono tracking-[0.2em] text-white/30">
-                0{idx + 1} // ENLACE
-              </div>
             </div>
           ))}
         </div>

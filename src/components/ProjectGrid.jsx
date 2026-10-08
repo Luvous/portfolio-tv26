@@ -10,8 +10,8 @@ export default function ProjectGrid({ projects }) {
   const pOcelotes =
     projects.find((p) => p.id === 'ocelotes') || projects[1];
 
-  const pSnowball =
-    projects.find((p) => p.id === 'snowball') || projects[2];
+  const pPersonal =
+    projects.find((p) => p.id === 'personal-projects') || projects[2];
 
   const pGalapago =
     projects.find((p) => p.id === 'galapago') || projects[3];
@@ -37,10 +37,10 @@ export default function ProjectGrid({ projects }) {
         {/* ROW 1 */}
         {/* ========================================================== */}
 
-        <div className="flex h-1/2 w-full border-b border-[#1a1a1a]">
+        <div className="flex h-[70%] w-full border-b border-[#1a1a1a]">
 
-          {/* 01 — BANDA */}
-          <div className="w-[41%] h-full border-r border-[#1a1a1a]">
+          {/* 01 — BRANDING */}
+          <div className="w-1/2 h-full border-r border-[#1a1a1a]">
             <ProjectCard
               project={pBanda}
               className="w-full h-full"
@@ -49,8 +49,8 @@ export default function ProjectGrid({ projects }) {
             />
           </div>
 
-          {/* 02 — OCELOTES */}
-          <div className="w-[41%] h-full border-r border-[#1a1a1a]">
+          {/* 02 — SPORTSWEAR */}
+          <div className="w-1/2 h-full">
             <ProjectCard
               project={pOcelotes}
               className="w-full h-full"
@@ -58,56 +58,22 @@ export default function ProjectGrid({ projects }) {
             />
           </div>
 
-          {/* Editorial vertical column */}
-          <div className="w-[18%] h-full flex flex-col">
-
-            {/* Material / Textile */}
-            <div className="relative h-1/2 w-full border-b border-[#1a1a1a] overflow-hidden bg-[#050505] group">
-
-              <img
-                src={editorialElements.materials.image}
-                alt="Materiales y Textura"
-                className="w-full h-full object-cover filter contrast-125 brightness-80 group-hover:scale-105 transition-transform duration-700"
-              />
-
-              <div className="absolute inset-0 bg-black/20" />
-
-              <div className="absolute top-4 right-4 text-right z-10 text-[9px] font-mono tracking-[0.25em] text-white/70 uppercase leading-relaxed">
-                {editorialElements.materials.labels.map((material) => (
-                  <div key={material}>
-                    {material}
-                  </div>
-                ))}
-
-                <div className="text-[#B40505] font-bold mt-1">
-                  —
-                </div>
-              </div>
-            </div>
-
-            {/* TV block */}
-            <div className="relative h-1/2 w-full bg-[#B40505] p-4 flex flex-col justify-end items-end select-none">
-              <span className="font-bebas text-2xl lg:text-3xl text-black font-bold tracking-tight">
-                TV©
-              </span>
-            </div>
-
-          </div>
         </div>
 
         {/* ========================================================== */}
         {/* ROW 2 */}
         {/* ========================================================== */}
 
-        <div className="flex h-1/2 w-full">
+        <div className="flex h-[30%] w-full">
 
-          {/* 03 — SNOWBALL */}
+          {/* 03 — PERSONAL PROJECTS */}
           <div className="w-[24%] h-full border-r border-[#1a1a1a]">
             <ProjectCard
-              project={pSnowball}
+              project={pPersonal}
               className="w-full h-full"
               editorialPosition="bottom-left"
               titlePosition="top-left"
+              compact
             />
           </div>
 
@@ -115,11 +81,11 @@ export default function ProjectGrid({ projects }) {
           {/* Editorial Manifesto */}
           {/* ======================================================== */}
 
-          <div className="relative w-[23%] h-full bg-[#B40505] border-r border-[#1a1a1a] p-5 lg:p-6 flex flex-col justify-between overflow-hidden select-none">
+          <div className="relative w-[23%] h-full bg-[#B40505] border-r border-[#1a1a1a] p-3 lg:p-4 flex flex-col justify-between overflow-hidden select-none">
 
             {/* Big Graphic Typography */}
             <div className="z-10">
-              <h2 className="font-bebas text-3xl sm:text-4xl lg:text-[42px] leading-[0.92] text-black tracking-tight font-extrabold">
+              <h2 className="font-bebas text-[clamp(24px,4vh,38px)] leading-[0.92] text-black tracking-tight font-extrabold">
                 {editorialElements.manifesto.title.map((line) => (
                   <div key={line}>
                     {line}
@@ -129,11 +95,11 @@ export default function ProjectGrid({ projects }) {
             </div>
 
             {/* Signature / Scribble */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-85">
+            <div className="absolute right-3 bottom-3 hidden xl:block pointer-events-none opacity-85 [@media(max-height:620px)]:hidden">
 
               <svg
                 viewBox="0 0 200 160"
-                className="w-full h-36 text-black"
+                className="w-16 2xl:w-20 h-auto text-black"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.6"
@@ -169,11 +135,11 @@ export default function ProjectGrid({ projects }) {
             {/* Bottom Signature & Concepts */}
             <div className="z-10">
 
-              <div className="font-bebas text-2xl text-black font-bold mb-1">
-                TV
+              <div className="font-bebas text-xl text-black font-bold mb-0.5">
+                TOM VARELA
               </div>
 
-              <div className="text-[9px] font-mono tracking-[0.24em] text-black/80 uppercase font-semibold leading-relaxed">
+              <div className="text-[8px] font-mono tracking-[0.14em] text-black/80 uppercase font-semibold leading-tight">
                 {editorialElements.manifesto.concepts.map((concept) => (
                   <div key={concept}>
                     {concept}
@@ -191,6 +157,7 @@ export default function ProjectGrid({ projects }) {
               className="w-full h-full"
               editorialPosition="bottom-left"
               titlePosition="top-left"
+              compact
             />
           </div>
 
@@ -280,10 +247,10 @@ export default function ProjectGrid({ projects }) {
           </div>
         </div>
 
-        {/* 03 — SNOWBALL */}
+        {/* 03 — PERSONAL PROJECTS */}
         <div className="w-full h-80 border-b border-[#1a1a1a]">
           <ProjectCard
-            project={pSnowball}
+            project={pPersonal}
             className="w-full h-full"
             editorialPosition="top-right"
           />

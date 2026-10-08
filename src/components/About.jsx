@@ -3,12 +3,12 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
 export default function About({ setActiveView }) {
   const disciplines = [
-    { title: 'Sport Product Design', desc: 'Diseño y desarrollo de productos deportivos, desde la exploración formal y funcional hasta su aplicación y producción.' },
-    { title: 'Graphic Design', desc: 'Sistemas gráficos, tipografía, composición visual y piezas de comunicación de alto impacto.' },
+    { title: 'Productos Deportivos', desc: 'Diseño y desarrollo de productos deportivos, desde la exploración formal y funcional hasta su aplicación y producción.' },
     { title: 'Branding', desc: 'Identidades visuales, sistemas de marca y lenguajes gráficos construidos para comunicar con claridad y personalidad.' },
-    { title: '3D & Visualization', desc: 'Modelado tridimensional, volumetría de producto, texturizado hiperrealista y visualización conceptual.' },
-    { title: 'Digital Design', desc: 'Diseño de interfaces, dirección visual y desarrollo de experiencias digitales funcionales y contemporáneas.' },
-    { title: 'Product Design', desc: 'Conceptualización y desarrollo de productos, desde la exploración visual hasta su aplicación y producción final.' }
+    { title: '3D Visualization & 3D Fashion', desc: 'Modelado tridimensional, volumetría de producto, texturizado hiperrealista y visualización conceptual.' },
+    { title: 'Diseño Gráfico', desc: 'Sistemas gráficos, tipografía, composición visual y piezas de comunicación de alto impacto.' },
+    { title: 'Diseño Digital', desc: 'Diseño de interfaces, dirección visual y desarrollo de experiencias digitales funcionales y contemporáneas.' },
+    { title: 'Diseño de Productos', desc: 'Conceptualización y desarrollo de productos, desde la exploración visual hasta su aplicación y producción final.' }
   ];
 
   return (
@@ -73,24 +73,16 @@ export default function About({ setActiveView }) {
               <span className="font-bebas text-2xl lg:text-3xl tracking-wider text-white">
                 ÁREAS DE EXPERTISE
               </span>
-              <span className="text-[10px] font-mono tracking-[0.25em] text-[#B40505] uppercase">
-                [ 06 CAMPOS ]
-              </span>
+
             </div>
 
             {/* Grid of 6 Core Disciplines */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-              {disciplines.map((item, index) => (
+              {disciplines.map((item) => (
                 <div
-                  key={index}
+                  key={item.title}
                   className="p-4 lg:p-5 bg-[#080808] border border-[#1a1a1a] hover:border-[#B40505]/60 transition-colors group"
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-mono tracking-[0.2em] text-[#B40505] font-bold">
-                      0{index + 1}
-                    </span>
-                    <span className="w-1.5 h-1.5 bg-[#B40505] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                  </div>
                   <h3 className="font-bebas text-xl lg:text-2xl tracking-wider text-white mb-1.5 group-hover:text-[#B40505] transition-colors">
                     {item.title}
                   </h3>

@@ -1,18 +1,17 @@
 export const projects = [
   {
     id: "banda",
-    number: "01",
-    title: "BRANDING",
-    category: "BRAND DEVELOPMENT & VISUAL IDENTITY",
+    title: "BRAND DEVELOPMENT",
+    category: "BRANDING DIRECTION & VISUAL IDENTITY",
     images: [
-      "/projects/branding/image00.jpg",
-      "/projects/branding/image01.png",
-      "/projects/branding/image02.jpg",
-      "/projects/branding/image03.jpg",
-      "/projects/branding/image04.png",
-      "/projects/branding/image05.jpg",
-      "/projects/branding/image06.png",
-      "/projects/branding/image07.png"
+      "/projects/branding/image00.webp",
+      "/projects/branding/image01.webp",
+      "/projects/branding/image02.webp",
+      "/projects/branding/image03.webp",
+      "/projects/branding/image04.webp",
+      "/projects/branding/image05.webp",
+      "/projects/branding/image06.webp",
+      "/projects/branding/image07.webp"
     ],
     link: "https://www.behance.net/moodboard/226681103/01_BRANDING",
     year: "2028",
@@ -22,18 +21,17 @@ export const projects = [
 
   {
     id: "sports",
-    number: "02",
-    title: "SPORTSWEAR",
+    title: "APPAREL GRAPHIC DESIGN",
     category: "APPAREL GRAPHIC DESIGN & PRODUCT DEVELOPMENT",
     images: [
       "/projects/sportswear/image01.webp",
       "/projects/sportswear/image02.webp",
-      "/projects/sportswear/image03.png",
+      "/projects/sportswear/image03.webp",
       "/projects/sportswear/image04.webp",
       "/projects/sportswear/image00.webp",
       "/projects/sportswear/image05.webp",
       "/projects/sportswear/image06.webp",
-      "/projects/sportswear/image07.png"
+      "/projects/sportswear/image07.webp"
     ],
     link: "https://www.behance.net/moodboard/226655379/SPORTS",
     year: "2025-PRESENT",
@@ -46,42 +44,32 @@ export const projects = [
   },
 
   {
-    id: "game-design",
-    number: "03",
-    title: "ART DIRECTION",
-    category: "VISUAL DIRECTION & ENVIRONMENT",
-    images: [
-      "projects/creative/image01.png"
-    ],
-    link: "https://www.behance.net/moodboard/226681083/03_ART_D",
-    year: "2024",
-    description: "Dirección visual, conceptual y arte ambiental para experiencias interactivas.",
+    id: "personal-projects",
+    title: "PERSONAL PROJECTS",
+    category: "EXPERIMENTS, CONCEPTS & EXPLORATIONS",
+    images: [],
+    link: "https://www.instagram.com/tomvarela.design",
+    year: "",
+    description: "Experimentos y proyectos personales.",
     tagline: [
-      "GAME DESIGN",
-      "CREATIVE DIRECTION",
-      "NARRATIVE"
+      "EXPERIMENTS",
+      "CONCEPTS",
+      "EXPLORATIONS"
     ]
   },
 
   {
     id: "galapago",
-    number: "04",
-    title: "TEXTILE DEVELOPMENT",
-    category: "MATERIALS & PRODUCTION PROCESS",
-    images: [
-      "/projects/textile/image00.png",
-      "/projects/textile/image01.png",
-      "/projects/textile/image02.png",
-      "/projects/textile/image03.png",
-      "/projects/textile/image04.png"
-    ],
-    link: "https://www.behance.net/GalapagoStudio",
+    title: "GALÁPAGO STUDIO",
+    category: "DIGITAL STRATEGY, WEB & MARKETING",
+    images: [],
+    link: "https://galapagostudio.netlify.app/",
     year: "2022-PRESENT",
     description: "Diseño de interfaz digital y plataforma de comunicación.",
     tagline: [
-      "PROCESS",
-      "MATERIAL",
-      "TECHNIQUE"
+      "STRATEGY",
+      "WEB",
+      "MARKETING"
     ]
   },
 
@@ -90,25 +78,15 @@ export const projects = [
 export const editorialElements = {
   manifesto: {
     title: [
-      "DISEÑO",
-      "CON",
-      "PROPOSITO"
+      "DESARROLLO",
+      "Y DIRECCIÓN",
+      "DE PRODUCTOS"
     ],
 
     concepts: [
       "PRODUCTO",
-      "IDENTIDAD",
-      "EXPERIENCIAS"
-    ]
-  },
-
-  materials: {
-    image: "/projects/textile.jpg",
-
-    labels: [
-      "IDEAS",
-      "MATERIALES",
-      "RESULTADOS"
+      "MARCAS",
+      "ARTES GRÁFICAS"
     ]
   },
 

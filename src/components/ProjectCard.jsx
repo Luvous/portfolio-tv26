@@ -5,10 +5,14 @@ export default function ProjectCard({
   project,
   className = '',
   editorialPosition = 'top-right',
-  titlePosition = 'bottom-left'
+  titlePosition = 'bottom-left',
+  compact = false
 }) {
+  const hasLink = Boolean(project.link);
+  const hasImage = Boolean(project.images?.length || project.image);
+
   const handleClick = () => {
-    if (project.link) {
+    if (hasLink) {
       window.open(project.link, '_blank', 'noopener,noreferrer');
     }
   };
@@ -29,19 +33,19 @@ export default function ProjectCard({
     <div
       id={`project-card-${project.id}`}
       onClick={handleClick}
-      className={`group relative overflow-hidden bg-[#0a0a0a] cursor-pointer select-none transition-all duration-300 border border-[#1a1a1a] ${className}`}
-      role="button"
-      tabIndex={0}
+      className={`group relative overflow-hidden ${hasImage ? 'bg-[#0a0a0a]' : 'bg-black'} ${hasLink ? 'cursor-pointer' : 'cursor-default'} select-none transition-all duration-300 border border-[#1a1a1a] ${className}`}
+      role={hasLink ? 'button' : undefined}
+      tabIndex={hasLink ? 0 : undefined}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           handleClick();
         }
       }}
-      aria-label={`Ver proyecto ${project.title} en Behance`}
+      aria-label={hasLink ? `Abrir ${project.title}` : undefined}
     >
 
       {/* IMAGE */}
-      <div className="absolute inset-0 overflow-hidden">
+      {hasImage && <div className="absolute inset-0 overflow-hidden">
         <img
           src={project.images ? project.images[currentImage] : project.image}
           alt={project.title}
@@ -49,10 +53,10 @@ export default function ProjectCard({
           className="w-full h-full object-cover object-center filter grayscale-[20%] contrast-110 brightness-90 animate-slow-zoom transition-all duration-700 ease-out group-hover:scale-105 group-hover:brightness-125" />
         <div className="absolute inset-0 bg-[#B40505]/8 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/40 group-hover:from-black/75 transition-colors duration-300" />
-      </div>
+      </div>}
 
       {/* TAGLINE FROM PROJECT DATA */}
-      {project.tagline && (
+      {project.tagline && !compact && (
         <div
           className={`absolute z-10 text-[9px] font-mono tracking-[0.25em] text-white/70 uppercase leading-relaxed ${editorialPosition === 'top-right'
             ? 'top-4 right-4 text-right'
@@ -76,38 +80,34 @@ export default function ProjectCard({
 
       {/* PROJECT INFORMATION */}
       <div
-        className={`absolute z-10 p-5 md:p-6 flex flex-col ${titlePosition === 'top-left'
+        className={`absolute z-10 ${compact ? 'p-4' : 'p-5 md:p-6'} flex flex-col ${titlePosition === 'top-left'
           ? 'top-0 left-0'
           : 'bottom-0 left-0 right-0'
           }`}
       >
 
-        <span className="font-bebas text-sm md:text-base text-white/50 tracking-wider mb-0.5">
-          {project.number}
-        </span>
-
-        <h2 className="font-bebas text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-white tracking-wider leading-none mb-1">
+        <h2 className={`font-bebas text-white tracking-wider leading-none mb-1 ${compact ? 'text-[clamp(30px,4.8vh,44px)]' : 'text-3xl sm:text-4xl md:text-4xl lg:text-5xl'}`}>
           {project.title}
         </h2>
 
-        <div className="flex items-center justify-between mt-0.5">
+        <div className="flex items-center justify-between gap-2 mt-0.5 min-w-0">
 
-          <p className="text-[10px] md:text-[11px] font-mono tracking-[0.22em] text-white/70 uppercase">
+          <p className={`min-w-0 flex-1 break-words font-mono text-white/70 uppercase ${compact ? 'text-[9px] leading-snug tracking-[0.12em]' : 'text-[10px] md:text-[11px] tracking-[0.22em]'}`}>
             {project.category}
           </p>
 
-          <div className="w-6 h-6 flex items-center justify-center text-white/70 group-hover:text-[#B40505] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+          {hasLink && <div className="w-6 h-6 shrink-0 flex items-center justify-center text-white/70 group-hover:text-[#B40505] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
             <ArrowUpRight
               size={18}
               strokeWidth={2}
             />
-          </div>
+          </div>}
 
         </div>
       </div>
 
       {/* HOVER BORDER */}
-      <div className="absolute inset-0 border border-transparent group-hover:border-[#B40505]/40 transition-colors duration-300 pointer-events-none" />
+      {hasLink && <div className="absolute inset-0 border border-transparent group-hover:border-[#B40505]/40 transition-colors duration-300 pointer-events-none" />}
 
     </div>
   );
